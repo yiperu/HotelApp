@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import com.arqoders.hotelapp.databinding.FragmentCacheBinding
 
 class CacheFragment : Fragment() {
-
     private var _binding: FragmentCacheBinding? = null
     private val binding get() = _binding!!
 

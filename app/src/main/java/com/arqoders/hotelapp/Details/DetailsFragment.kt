@@ -7,12 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.arqoders.hotelapp.databinding.FragmentDetailsBinding
 
-
 class DetailsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
     private var _binding: FragmentDetailsBinding? = null
     private val binding get() = _binding!!
 
