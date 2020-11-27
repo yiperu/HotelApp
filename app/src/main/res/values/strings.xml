@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">HotelApp</string>
+    <string name="home">Inicio</string>
+    <string name="details">Detalles</string>
+    <string name="cache">Cache</string>
+    <string name="preference">Preferencia</string>
 </resources>
