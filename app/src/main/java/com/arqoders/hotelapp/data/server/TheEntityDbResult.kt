@@ -18,9 +18,8 @@ data class Group(
 @Parcelize
 data class Entity(
     @SerializedName("id") val destinationId: Int,
-    @SerializedName("name") val name: String,
-    @SerializedName("type") val type: String,
-    @SerializedName("latitude") val latitude: Double,
-    @SerializedName("longitude") val longitude: Double
-
+    val name: String,
+    val type: String,
+    val latitude: Double,
+    val longitude: Double
 ) : Parcelable

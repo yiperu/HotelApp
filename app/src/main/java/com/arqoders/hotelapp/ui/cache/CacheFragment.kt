@@ -1,25 +1,26 @@
-package com.arqoders.hotelapp.Preference
+package com.arqoders.hotelapp.ui.cache
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.arqoders.hotelapp.databinding.FragmentPreferenceBinding
+import com.arqoders.hotelapp.databinding.FragmentCacheBinding
 
-class PreferenceFragment : Fragment() {
-    private var _binding: FragmentPreferenceBinding? = null
+class CacheFragment : Fragment() {
+    private var _binding: FragmentCacheBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentPreferenceBinding.inflate(inflater, container, false)
+        _binding = FragmentCacheBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }

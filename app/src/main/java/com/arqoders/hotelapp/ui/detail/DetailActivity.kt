@@ -29,7 +29,7 @@ class DetailActivity : ScopeActivity() {
 
         viewModel.model.observe(this, Observer(::updateUi))
 
-        binding.movieDetailFavorite.setOnClickListener { viewModel.onFavoriteClicked() }
+        binding.hotelDetailFavorite.setOnClickListener { viewModel.onFavoriteClicked() }
     }
 
     private fun updateUi(model: DetailViewModel.UiModel) = with(binding) {
@@ -37,6 +37,6 @@ class DetailActivity : ScopeActivity() {
         hotelDetailToolbar.title = hotel.name
 
         val icon = if (hotel.favorite) R.drawable.ic_favorite_on else R.drawable.ic_favorite_off
-        movieDetailFavorite.setImageDrawable(ContextCompat.getDrawable(this@DetailActivity, icon))
+        hotelDetailFavorite.setImageDrawable(ContextCompat.getDrawable(this@DetailActivity, icon))
     }
 }

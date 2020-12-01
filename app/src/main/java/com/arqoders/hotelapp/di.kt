@@ -9,6 +9,9 @@ import com.arqoders.hotelapp.ui.detail.DetailActivity
 import com.arqoders.hotelapp.ui.detail.DetailViewModel
 import com.arqoders.hotelapp.ui.main.MainActivity
 import com.arqoders.hotelapp.ui.main.MainViewModel
+import com.arqoders.hotelapp.util.API_BASE_URL
+import com.arqoders.hotelapp.util.API_KEY
+import com.arqoders.hotelapp.util.API_LOCALE
 import com.arqoders.usecases.FindHotelById
 import com.arqoders.usecases.GetHotels
 import com.arqoders.usecases.ToggleHotelFavorite
@@ -31,15 +34,24 @@ fun Application.initDI() {
 }
 
 private val appModule = module {
-    single(named("apiKey")) { androidApplication().getString(R.string.api_key) }
+    single(named("apiKey")) { API_KEY }
     factory<PermissionChecker> { AndroidPermissionChecker(get()) }
     single<CoroutineDispatcher> { Dispatchers.Main }
-    single(named("baseUrl")) { "https://hotels4.p.rapidapi.com/" }
+    single(named("baseUrl")) { API_BASE_URL }
+    single(named("locale")) { API_LOCALE }
 }
 
 val dataModule = module {
     factory { RegionRepository(get(), get()) }
-    factory { HotelsRepository(get(), get(), get(), get(named("apiKey"))) }
+    factory { HotelsRepository(
+            get(),
+            get(),
+            get(),
+            get(named("apiKey")),
+            get(named("baseUrl")),
+            get(named("query")),
+            get(named("locale"))
+    )}
 }
 
 private val scopesModule = module {

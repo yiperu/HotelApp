@@ -18,5 +18,5 @@ interface HotelDao {
     fun insertHotels(hotels: List<Hotel>)
 
     @Update
-    fun updateHotel(movie: Hotel)
+    fun updateHotel(hotel: Hotel)
 }

@@ -8,15 +8,18 @@ class HotelsRepository(
     private val localDataSource: LocalDataSource,
     private val remoteDataSource: RemoteDataSource,
     private val regionRepository: RegionRepository,
-    private val apiKey: String
+    private val apiKey: String,
+    private val baseUrl: String,
+    private val query: String,
+    private val locale: String
+
 ) {
 
     suspend fun getHotels(): List<Hotel> {
 
         if (localDataSource.isEmpty()) {
-            val entities =
-                remoteDataSource.getHotels(query, locale,  apiKey, host)
-            localDataSource.saveHotels(entities)
+            val entities = remoteDataSource.getHotels(query, locale,  apiKey, baseUrl)
+            //localDataSource.saveHotels(entities)
         }
 
         return localDataSource.getHotels()
