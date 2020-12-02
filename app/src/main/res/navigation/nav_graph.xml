@@ -6,35 +6,14 @@
     app:startDestination="@id/mainActivity">
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.arqoders.hotelapp.MainActivity"
+        android:name="com.arqoders.hotelapp.ui.main.MainActivity"
         android:label="activity_main"
-        tools:layout="@layout/activity_main" >
-        <action
-            android:id="@+id/action_mainActivity_to_homeFragment"
-            app:destination="@id/homeFragment" >
-            <action
-                android:id="@+id/action_action_mainActivity_to_homeFragment_to_cacheFragment"
-                app:destination="@id/cacheFragment" />
-        </action>
-        <action
-            android:id="@+id/action_mainActivity_to_cacheFragment"
-            app:destination="@id/cacheFragment" />
-        <action
-            android:id="@+id/action_mainActivity_to_preferenceFragment"
-            app:destination="@id/preferenceFragment" />
-    </activity>
+        tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.arqoders.hotelapp.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_detailsFragment"
-            app:destination="@id/detailsFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_cacheFragment"
-            app:destination="@id/cacheFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.arqoders.hotelapp.ui.details.DetailsFragment"
@@ -49,9 +28,5 @@
         android:id="@+id/preferenceFragment"
         android:name="com.arqoders.hotelapp.ui.preference.PreferenceFragment"
         android:label="fragment_preference"
-        tools:layout="@layout/fragment_preference" >
-        <action
-            android:id="@+id/action_preferenceFragment_to_cacheFragment"
-            app:destination="@id/cacheFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_preference" />
 </navigation>
