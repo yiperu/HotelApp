@@ -29,43 +29,23 @@ fun Application.initDI() {
     startKoin {
         androidLogger()
         androidContext(this@initDI)
-        //modules(listOf(appModule, dataModule, scopesModule ))
-        modules(listOf(appModule))
+        modules(listOf(appModule, dataModule, scopesModule ))
     }
 }
 
 private val appModule = module {
-    viewModel { MainViewModel() }
-   /* single(named("apiKey")) { API_KEY }
+    single(named("apiKey")) { API_KEY }
     factory<PermissionChecker> { AndroidPermissionChecker(get()) }
     single<CoroutineDispatcher> { Dispatchers.Main }
     single(named("baseUrl")) { API_BASE_URL }
-    single(named("locale")) { API_LOCALE }*/
+    single(named("locale")) { API_LOCALE }
+    viewModel { MainViewModel() }
 }
 
-/*val dataModule = module {
-    factory { RegionRepository(get(), get()) }
-    factory { HotelsRepository(
-            get(),
-            get(),
-            get(),
-            get(named("apiKey")),
-            get(named("baseUrl")),
-            get(named("query")),
-            get(named("locale"))
-    )}
-}*/
+val dataModule = module {
+}
 
-//private val scopesModule = module {
-    //scope(named<MainActivity>()) {
-        //viewModel { MainViewModel(get(), get()) }
-  //      viewModel { MainViewModel()}
-        //scoped { GetHotels(get()) }
-    //}
-
-    //scope(named<DetailActivity>()) {
-       // viewModel { (id: Int) -> DetailViewModel(id, get(), get(), get()) }
-        //scoped { FindHotelById(get()) }
-        //scoped { ToggleHotelFavorite(get()) }
-    //}
-//}
+private val scopesModule = module {
+    scope(named<MainActivity>()) {
+    }
+}
