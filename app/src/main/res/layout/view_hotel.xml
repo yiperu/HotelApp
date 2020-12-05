@@ -23,7 +23,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:background="@color/colorPrimaryDark"
-        android:padding="8dp"
+        android:padding="@dimen/title_padding"
         android:lines="2"
         android:minLines="2"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"

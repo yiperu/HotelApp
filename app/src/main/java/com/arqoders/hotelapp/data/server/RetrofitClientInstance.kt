@@ -5,17 +5,17 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class TheHotelDb(baseUrl: String) {
+class RetrofitClientInstance(baseUrl: String) {
 
-    val okHttpClient = HttpLoggingInterceptor().run {
+    private val okHttpClient = HttpLoggingInterceptor().run {
         level = HttpLoggingInterceptor.Level.BODY
         OkHttpClient.Builder().addInterceptor(this).build()
     }
 
-    val service: TheEntityDbService = Retrofit.Builder()
+    val service: ApiService = Retrofit.Builder()
         .baseUrl(baseUrl)
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-        .run { create(TheEntityDbService::class.java) }
+        .run { create(ApiService::class.java) }
 }
