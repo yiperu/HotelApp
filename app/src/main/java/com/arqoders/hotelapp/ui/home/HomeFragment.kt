@@ -1,14 +1,14 @@
-package com.arqoders.hotelapp.Cache
+package com.arqoders.hotelapp.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.arqoders.hotelapp.databinding.FragmentCacheBinding
+import com.arqoders.hotelapp.databinding.FragmentHomeBinding
 
-class CacheFragment : Fragment() {
-    private var _binding: FragmentCacheBinding? = null
+class HomeFragment : Fragment() {
+    private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +20,7 @@ class CacheFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentCacheBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }
