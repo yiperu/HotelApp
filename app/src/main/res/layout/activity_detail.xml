@@ -33,7 +33,7 @@
                 android:id="@+id/hotelDetailToolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                tools:title="Hotel name" />
+                tools:title="@string/app_name" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:padding="16dp"
+                android:padding="@dimen/textview_padding"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 tools:text="Lorem ipsum" />
 
@@ -63,7 +63,7 @@
                 android:id="@+id/hotelDetailInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
+                android:padding="@dimen/textview_padding"
                 android:background="@color/lightBackground"
                 android:lineSpacingMultiplier="1.5"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"

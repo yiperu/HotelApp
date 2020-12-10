@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="title_text_size">50sp</dimen>
+    <item name="item_match_parent" format="integer" type="dimen">-1</item>
+    <item name="item_wrap_content" format="integer" type="dimen">-2</item>
+
+    <dimen name="wrap_content">@dimen/item_wrap_content</dimen>
+    <dimen name="match_parent">@dimen/item_match_parent</dimen>
+    <dimen name="collapsing_layout_height">250dp</dimen>
+    <dimen name="layout_margin">16dp</dimen>
+    <dimen name="title_padding">8dp</dimen>
+    <dimen name="textview_padding">16dp</dimen>
 </resources>
